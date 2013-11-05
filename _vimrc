@@ -26,8 +26,9 @@ set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p
 set guitablabel=[%M%N]%t
 color Koehler
 let g:html_dynamic_folds = 1
+filetype off		"Vundle setting
 filetype plugin on
-filetype plugin indent on
+filetype plugin indent on "Vundle setting
 syntax on
 autocmd FileType python setlocal et sta sw=4 sts=4
 "解决console输出乱码
@@ -160,3 +161,46 @@ function! Vimgrep_CurrentFile()
 		let s:Vimgrep_CurrentFile_Running = 0
 	endif
 endfunction
+
+
+" Vundle setting
+" set rtp+=~/.vim/bundle/vundle/
+set rtp+=$VIM/vimfiles/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'hdima/python-syntax'
+Bundle 'emnh/taglist.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vimwiki/vimwiki'
+Bundle 'hdima/python-syntax'
+
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+" ...
+
+" filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
