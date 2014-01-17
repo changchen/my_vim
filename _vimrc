@@ -1,6 +1,11 @@
+"-------------------------------------------------------------------------
 "GUI settings
+"-------------------------------------------------------------------------
 set guioptions=mrbe
+
+"-------------------------------------------------------------------------
 " General settings
+"-------------------------------------------------------------------------
 set nocompatible
 set encoding=utf-8
 set ruler
@@ -48,18 +53,26 @@ imap <C-F5> <C-R>=strftime("%C")<CR>
 nnoremap <F11> :NERDTreeToggle<CR>
 nnoremap <F12> :TlistToggle<CR>
 
+"-------------------------------------------------------------------------
 " pathogen.vim setting
+"-------------------------------------------------------------------------
 " execute pathogen#infect()
 
+"-------------------------------------------------------------------------
 " taglist setting
+"-------------------------------------------------------------------------
 set tags=tags;
 set autochdir
 let Tlist_Ctags_Cmd="ctags"
 
+"-------------------------------------------------------------------------
 " NERDTree Setting
+"-------------------------------------------------------------------------
 let NERDTreeWinPos="right"
 
+"-------------------------------------------------------------------------
 " Cscope Setting
+"-------------------------------------------------------------------------
 " This tests to see if vim was configured with the '--enable-cscope' option
 " when it was compiled.  If it wasn't, time to recompile vim... 
 if has("cscope")
@@ -101,7 +114,9 @@ endif
 "" endif
 
 
+"-------------------------------------------------------------------------
 " CCTREE Setting
+"-------------------------------------------------------------------------
 let g:CCTreeOrientation="rightbelow"
 
 " PreviewWord()
@@ -163,7 +178,9 @@ function! Vimgrep_CurrentFile()
 endfunction
 
 
+"-------------------------------------------------------------------------
 " Vundle setting
+"-------------------------------------------------------------------------
 " set rtp+=~/.vim/bundle/vundle/
 set rtp+=$VIM/vimfiles/bundle/vundle/
 call vundle#rc()
@@ -180,6 +197,9 @@ Bundle 'emnh/taglist.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'vimwiki/vimwiki'
 Bundle 'hdima/python-syntax'
+Bundle 'vim-scripts/vcscommand.vim'
+" python_fn.vim, Written by Mikael Berthe
+Bundle 'python.vim'
 
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-easymotion'
@@ -204,3 +224,10 @@ Bundle 'hdima/python-syntax'
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed..
+
+
+"-------------------------------------------------------------------------
+" VimWiki Setting
+"-------------------------------------------------------------------------
+let g:vimwiki_html_header_numbering=2
+let g:vimwiki_list_ignore_newline=0
